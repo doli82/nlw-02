@@ -1,21 +1,22 @@
-import Knex from 'knex';
+/* eslint-disable no-unused-vars */
+import Knex from 'knex'
 
-export async function up(knex: Knex) {
-    return knex.schema.createTable('connections', table =>{
-        table.increments('id').primary();
+export async function up (knex: Knex) {
+  return knex.schema.createTable('connections', table => {
+    table.increments('id').primary()
 
-        table.integer('user_id')
-            .notNullable()
-            .references('id')
-            .inTable('users')
-            .onDelete('CASCADE')
-            .onDelete('CASCADE');
+    table.integer('user_id')
+      .notNullable()
+      .references('id')
+      .inTable('users')
+      .onDelete('CASCADE')
+      .onDelete('CASCADE')
 
-        table.timestamp('created_at')
-        .defaultTo('now()')
-        .notNullable()
-    })
+    table.timestamp('created_at')
+      .defaultTo('now()')
+      .notNullable()
+  })
 }
-export async function down(knex: Knex) {
-    return knex.schema.dropTable('connections');
+export async function down (knex: Knex) {
+  return knex.schema.dropTable('connections')
 }
