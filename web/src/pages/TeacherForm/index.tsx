@@ -24,9 +24,7 @@ const TeacherForm = () => {
       to: ''
     }])
   }
-
   return (
-
     <div id="page-teacher-form">
       <PageHeader 
       title="Que incrível que você quer dar aulas." 
@@ -39,6 +37,19 @@ const TeacherForm = () => {
           <Input label="Avatar" name="avatar"></Input>
           <Input label="Whatsapp" name="whatsapp"></Input>
           <Textarea name="bio" label="Biografia" />
+        </fieldset>
+        
+        <fieldset>
+        <legend>Sobre a aula</legend>
+            <Select 
+          label="Matéria" 
+          name="subject"
+              options={[
+            {value: "Eletromagnetismo", label: "Eletromagnetismo"},
+            {value: "Física 3", label: "Física 3"},
+              ]}
+            ></Select>
+        <Input label="Custo da sua hora aula" name="cost"></Input>
         </fieldset>
         
         <fieldset>
@@ -68,14 +79,6 @@ const TeacherForm = () => {
           ))}
           
         </fieldset>
-        
-        <fieldset>
-          <legend>Seus dados</legend>
-          <Input label="Nome completo" name="name"></Input>
-          <Input label="Avatar" name="avatar"></Input>
-          <Input label="Whatsapp" name="whatsapp"></Input>
-          <Textarea name="bio" label="Biografia" />
-        </fieldset>
 
         <footer>
           <p>
@@ -89,5 +92,5 @@ const TeacherForm = () => {
       </main>
     </div>
   )
-}
+            }
 export default TeacherForm
